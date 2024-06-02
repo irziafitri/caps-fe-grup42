@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digi UMKM</title>
+    <title>Admin Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -34,25 +34,19 @@
             <div class="md:flex md:items-center md:gap-12">
               <nav aria-label="Global" class="hidden md:block">
                 <ul class="flex items-center gap-6 text-sm">
+                 
                   <li>
-                    <a class="text-gray-500 transition hover:text-gray-500/75" href="webinar.html"> Webinar </a>
+                    <a class="text-gray-500 transition hover:text-gray-500/75" href="#tambahWebinar"> Tambahkan Webinar </a>
                   </li>
       
                   <li>
-                    <a class="text-gray-500 transition hover:text-gray-500/75" href="#tentang"> Tentang Kami </a>
+                    <a class="text-gray-500 transition hover:text-gray-500/75" href="#listWebinar"> List Webinar </a>
                   </li>
                 </ul>
               </nav>
       
-              <div class="flex items-center gap-4">
-                <div class="sm:flex sm:gap-4">
-                  <a
-                    class="rounded-md bg-purple-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-                    href="login.html"
-                  >
-                    Masuk
-                </a>
-                </div>
+              
+      
       
                 <div class="block md:hidden">
                   <button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
@@ -75,33 +69,64 @@
     </header>
     <!-- END NAVBAR -->
 
-    <!-- Daftar -->
-    <div class="min-h-screen flex items-center justify-center py-10">
-        <div class="container mx-auto max-w-xl px-4 py-8">  <div class="login-form bg-white shadow-md rounded-lg px-8 pb-8 flex flex-col items-center">  <h2 class="text-xl font-bold mb-6">Daftar</h2>
-            <form id="daftar" method="post" class="w-full">
-              <div class="mb-4">
-                <label for="email" class="block text-left font-medium mb-2">Email:</label>
-                <input type="email" id="email" name="email" required class="shadow-sm px-3 py-2 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 w-full rounded-md border border-gray-300">
-              </div>
-              <div class="mb-4">
-                <label for="username" class="block text-left font-medium mb-2">Nama Pengguna:</label>
-                <input type="text" id="username" name="username" required class="shadow-sm px-3 py-2 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 w-full rounded-md border border-gray-300">
-              </div>
-              <div class="mb-4">
-                <label for="name" class="block text-left font-medium mb-2">Nama Lengkap:</label>
-                <input type="text" id="name" name="name" required class="shadow-sm px-3 py-2 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 w-full rounded-md border border-gray-300">
-              </div>
-              <div class="mb-6">
-                <label for="password" class="block text-left font-medium mb-2">Kata Sandi:</label>
-                <input type="password" id="password" name="password" required class="shadow-sm px-3 py-2 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 w-full rounded-md border border-gray-300">
-              </div>
-              <button type="submit" class="inline-flex items-center px-4 py-2 bg-indigo-500 text-white font-bold rounded-md shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Daftar</button>
-              <p class="mt-4 text-sm text-gray-500">Sudah Punya Akun? <a href="login.html" class="text-indigo-500 hover:text-indigo-700">Masuk</a></p>
-            </form>
-          </div>
-        </div>
-      </div>
-    <!-- End Daftar -->
+   <!-- Banner -->
+   <section class="relative bg-image bg-cover bg-center bg-no-repeat">
+    <div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25"></div>
+    <div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+    <div class="max-w-xl text-left">  <h1 class="text-3xl font-extrabold sm:text-5xl">
+        Selamat datang
+        <strong class="block font-extrabold text-purple-600"> Jangan Sampai Ketinggalan!</strong>
+      </h1>
 
+      <p class="mt-4 max-w-lg sm:text-xl/relaxed">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus
+        numquam ea!
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4 text-center">
+        <a
+          href="webinar.html"
+          class="block w-full rounded bg-purple-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-purple-700 focus:outline-none focus:ring active:bg-purle-500 sm:w-auto">
+          Cari Webinar
+        </a>
+      </div>
+    </div>
+    </div>
+    </section>
+    <!-- End banner -->
+
+    <!-- Tambah webinar -->
+    <section class="addWebinar">
+    <div class="container py-20">
+        <h1 class="text-xl font-bold mb-6">Tambahkan Webinar</h1>
+        <form action="/add-webinar" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="title">Judul:</label>
+            <input type="text" id="title" name="title" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="description">Deskripsi:</label>
+            <textarea id="description" name="description" class="form-control" rows="5" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="image">Gambar:</label>
+            <input type="file" id="image" name="image" class="form-control-file" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Tambahkan Webinar</button>
+        </form>
+    </div>
+    </div>
+    </section>
+    </body>
+    
+      <script src="script.js"></script>
+    </body>
+    </html>
+    <!-- end tambah webinar-->
+
+    <!-- List Webinar -->
+
+    <!-- end List webinar -->
+    
 </body>
 </html>
